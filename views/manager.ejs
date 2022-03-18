@@ -1,0 +1,59 @@
+<!-- manager.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMS Manager Homepage</title> <!-- todo: add name here -->
+</head>
+
+<body>
+    <h1>Manager Homepage</h1>
+
+    <h2>Welcome, [name]</h2>
+
+    <table>
+        <tr>
+            <td>
+                <form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
+                    <div>
+                        <label>Employee ID</label><label class="validation-error hide" id="fullNameValidationError">This
+                            field is required.</label>
+                        <input type="text" name="employeeID" id="employeeID">
+                    </div>
+                    <div>
+                        <label>Name*</label>
+                        <input type="text" name="name" id="name">
+                    </div>
+                    <div class="form-action-buttons">
+                        <input type="submit" value="Submit">
+                    </div>
+                </form>
+            </td>
+            <td>
+                <table class="list" id="employeeList">
+                    <thead>
+                        <tr>
+                            <th>Full Name</th>
+                            <th>EMP Code</th>
+                            <th>Salary</th>
+                            <th>City</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <button>logout</button>
+</body>
+<script src="/manager.js"></script>
+
+</html>
