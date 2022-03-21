@@ -15,42 +15,13 @@
 
     <h2>Welcome, [name]</h2>
 
-    <table>
-        <tr>
-            <td>
-                <form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
-                    <div>
-                        <label>Employee ID</label><label class="validation-error hide" id="fullNameValidationError">This
-                            field is required.</label>
-                        <input type="text" name="employeeID" id="employeeID">
-                    </div>
-                    <div>
-                        <label>Name*</label>
-                        <input type="text" name="name" id="name">
-                    </div>
-                    <div class="form-action-buttons">
-                        <input type="submit" value="Submit">
-                    </div>
-                </form>
-            </td>
-            <td>
-                <table class="list" id="employeeList">
-                    <thead>
-                        <tr>
-                            <th>Full Name</th>
-                            <th>EMP Code</th>
-                            <th>Salary</th>
-                            <th>City</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
+    <a href="./create"><h2>Create Employee</h2></a>
 
-                    </tbody>
-                </table>
-            </td>
-        </tr>
-    </table>
+    <a href="./update"><h2>Read Employee</h2></a>
+    
+    <a href="./update"><h2>Update Employee</h2></a>
+    
+    <a href="./delete"><h2>Delete Employee</h2></a>
 
     <button>logout</button>
 </body>
