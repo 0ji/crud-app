@@ -1,4 +1,4 @@
-<!-- manager.ejs -->
+<!-- employee.ejs -->
 <link
   href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
   rel="stylesheet"
@@ -17,44 +17,21 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>EMS Manager Homepage</title>
+    <title>EMS Employee Homepage</title>
     <!-- todo: add name here -->
   </head>
 
   <body>
-    <h1>Manager Homepage</h1>
+    <h1>Employee Homepage</h1>
 
     <h2>Welcome, [name]</h2>
 
-    <!-- <a href="./create"><h2>Create Employee</h2></a> -->
-    <h2>Create Employee</h2>
-    <div class="create_div">
-      <form method="POST" action="/employee">
-        <label>Name: <input type="text" name="name" required /></label>
-        <br />
-        <label>Position: <input type="text" name="position" required /></label>
-        <br />
-        <label>Address: <input type="text" name="address" required /></label>
-        <br />
-        <label>Phone: <input type="text" name="phone" required /></label>
-        <br />
-        <input type="submit" value="Create Employee" />
-      </form>
-    </div>
-
     <a href="./employees"><h2>Read All Employees</h2></a>
-
-    <!-- <a href="./search"><h2>Find Employee</h2></a> -->
-    <h2>Find Employee</h2>
-    <div class="find_div">
-      <form method="POST" action="/findEmployee">
-        <input type="text" name="id" placeholder="employee id" />
-        <button>Get Employee</button>
-      </form>
-    </div>
+    <p>todo: limit information an employee can view. blocked by login/auth functionality</p>
 
     <!-- <a href="./update"><h2>Update Employee</h2></a> -->
     <h2>Update Employee</h2>
+    <p>TODO: make it so employee can only update own personal information. again blocked by login/auth functionality. ideally will grab id from login</p>
     <div class="update_div">
         <form method="POST" action="/updateEmployee">
             <label>Id: <input type="text" name="id" placeholder="employee id" /></label>
@@ -71,19 +48,8 @@
           </form>
     </div>
 
-    <!-- <a href="./delete"><h2>Delete Employee</h2></a> -->
-    <h2>Delete Employee</h2>
-    <p>TODO: make sure manager can't delete own account?</p>
-    <div class="find_div">
-        <form method="POST" action="/deleteEmployee">
-          <input type="text" name="id" placeholder="employee id" />
-          <button>Delete Employee</button>
-        </form>
-      </div>
-
       <form action="/login">
           <button>logout</button>
       </form>
   </body>
-  <script src="/manager.js"></script>
 </html>

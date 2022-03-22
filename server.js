@@ -32,3 +32,11 @@ app.listen(3000, function () {
 app.get('/', function (req, res) {
     res.render('manager.ejs', {})
 });
+
+app.get('/login', function (req, res) {
+    res.render('login.ejs', {})
+});
+
+app.get('/employee', function (req, res) {
+    res.render('employee.ejs', {})
+});
