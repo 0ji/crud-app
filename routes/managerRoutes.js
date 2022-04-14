@@ -1,16 +1,20 @@
 const express = require("express");
+const res = require("express/lib/response");
 const empModel = require("../models/employee");
 const app = express();
 app.use(express.urlencoded({ extended: true }));
 
 // return all employees
 app.get("/employees", async (request, response) => {
-  const employees = await empModel.find({});
-  try {
-    response.send(employees);
-  } catch (error) {
-    response.status(500).send(error);
-  }
+  empModel.find({}, function (err, data) {
+    if (err) {
+      console.log(err)
+    } else {
+      response.render("employeeList.ejs", {
+        employees: data
+      })
+    }
+  })
 });
 
 // create employee
