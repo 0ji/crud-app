@@ -13,6 +13,10 @@ const employeeSchema = new mongoose.Schema ({
         type: String,
         default: "N/A"
     },
+    email: {
+        type: String,
+        default: "N/A"
+    },
     phone: {
         type: String,
         default: "N/A"

@@ -1,16 +1,4 @@
 <!-- employee.ejs -->
-<link
-  href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-  rel="stylesheet"
-  integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-  crossorigin="anonymous"
-/>
-<script
-  src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-  crossorigin="anonymous"
-></script>
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -18,38 +6,75 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>EMS Employee Homepage</title>
-    <!-- todo: add name here -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
   </head>
 
   <body>
-    <h1>Employee Homepage</h1>
-
-    <h2>Welcome, [name]</h2>
-
-    <a href="./employees"><h2>Read All Employees</h2></a>
-    <p>todo: limit information an employee can view. blocked by login/auth functionality</p>
-
-    <!-- <a href="./update"><h2>Update Employee</h2></a> -->
-    <h2>Update Employee</h2>
-    <p>TODO: make it so employee can only update own personal information. again blocked by login/auth functionality. ideally will grab id from login</p>
-    <div class="update_div">
+    <div class="container">
+      <%- include('partials/navbar') %>
+      
+      <h1>Employee Homepage</h1>
+  
+      <h2>Welcome, [name]</h2>
+  
+      <a href="./employees"><h2>Read All Employees</h2></a>
+      <p>
+        todo: limit information an employee can view. blocked by login/auth
+        functionality
+      </p>
+  
+      <!-- <a href="./update"><h2>Update Employee</h2></a> -->
+      <h2>Update Employee</h2>
+      <p>
+        TODO: make it so employee can only update own personal information. again
+        blocked by login/auth functionality. ideally will grab id from login
+      </p>
+      <div class="update_div">
         <form method="POST" action="/updateEmployee">
-            <label>Id: <input type="text" name="id" placeholder="employee id" /></label>
-            <br>
-            <label>Name: <input type="text" name="name" required /></label>
-            <br />
-            <label>Position: <input type="text" name="position" required /></label>
-            <br />
-            <label>Address: <input type="text" name="address" required /></label>
-            <br />
-            <label>Phone: <input type="text" name="phone" required /></label>
-            <br />
-            <button>Update Employee</button>
-          </form>
+          <label
+            >Id: <input type="text" name="id" placeholder="employee id"
+          /></label>
+          <br />
+          <label>Name: <input type="text" name="name" required /></label>
+          <br />
+          <label>Position: <input type="text" name="position" required /></label>
+          <br />
+          <label>Address: <input type="text" name="address" required /></label>
+          <br />
+          <label>Phone: <input type="text" name="phone" required /></label>
+          <br />
+          <button>Update Employee</button>
+        </form>
+      </div>
+  
+      <form action="/login">
+        <button>logout</button>
+      </form>
     </div>
 
-      <form action="/login">
-          <button>logout</button>
-      </form>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
