@@ -84,6 +84,24 @@ app.post("/deleteEmployee", async (request, response) => {
     response.status(500).send(error);
   }
 });
+
+// // landing pages for manager
+
+// find employee page
+app.get("/managerFindEmployee", async (request, response) => {
+  response.render("employeeFind.ejs", {});
+});
+
+// update employee page
+app.get("/managerUpdateEmployee", async (request, response) => {
+  response.render("employeeUpdate.ejs", {});
+});
+
+// create employee page
+app.get("/managerCreateEmployee", async (request, response) => {
+  response.render("employeeCreate.ejs", {});
+});
+
 // app.get("/all_employees", async (request, response) => {
 //     // const employees = await empModel.find({});
 //     // try {

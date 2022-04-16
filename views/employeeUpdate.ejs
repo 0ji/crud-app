@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Employee List View</title>
+    <title>Employee Update View</title>
 
     <link
       rel="stylesheet"
@@ -20,35 +20,11 @@
   <body>
     <div class="container">
       <%- include('partials/navbar-manager.ejs') %>
-      <h2>Employee List</h2>
-      <table class="table">
-        <thead class="thead-dark">
-          <tr>
-            <th scope="col">ID</th>
-            <th scope="col">Name</th>
-            <th scope="col">Position</th>
-            <th scope="col">Address</th>
-            <th scope="col">Email</th>
-            <th scope="col">Phone</th>
-          </tr>
-        </thead>
-        <tbody>
-          <%if (employees.length >0){ %> <% employees.forEach(function(row){ %>
-          <tr>
-            <td><%= row.id %></td>
-            <td><%= row.name %></td>
-            <td><%= row.position %></td>
-            <td><%= row.address %></td>
-            <td><%= row.email %></td>
-            <td><%= row.phone %></td>
-          </tr>
-          <% })}else{ %>
-          <tr>
-            <td colspan="6">No Record Found</td>
-          </tr>
-          <% } %>
-        </tbody>
-      </table>
+      <h2>Update Employee</h2>
+      <div class="find_div">
+        <%- include('partials/update-employee.ejs') %>
+
+      </div>
     </div>
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
