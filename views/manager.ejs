@@ -48,24 +48,10 @@
       </div>
   
       <!-- <a href="./update"><h2>Update Employee</h2></a> -->
+      <br>
       <h2>Update Employee</h2>
-      <div class="update_div">
-        <form method="POST" action="/updateEmployee">
-          <label
-            >Id: <input type="text" name="id" placeholder="employee id"
-          /></label>
-          <br />
-          <label>Name: <input type="text" name="name" required /></label>
-          <br />
-          <label>Position: <input type="text" name="position" required /></label>
-          <br />
-          <label>Address: <input type="text" name="address" required /></label>
-          <br />
-          <label>Phone: <input type="text" name="phone" required /></label>
-          <br />
-          <button>Update Employee</button>
-        </form>
-      </div>
+      <%- include('partials/update-employee.ejs') %>
+
   
       <!-- <a href="./delete"><h2>Delete Employee</h2></a> -->
       <h2>Delete Employee</h2>
