@@ -56,8 +56,9 @@ app.delete("/employee/:id", async (request, response) => {
 
 //===== additional routes
 app.post("/findEmployee", async (request, response) => {
-  const employee = await empModel.findById(request.body.id);
   try {
+    const employee = await empModel.findById(request.body.id);
+    if (!employee) response.status(404).send("No employee found");
     response.send(employee);
   } catch (error) {
     response.status(500).send(error);
@@ -65,9 +66,9 @@ app.post("/findEmployee", async (request, response) => {
 });
 
 app.post("/updateEmployee", async (request, response) => {
-  await empModel.findByIdAndUpdate(request.body.id, request.body);
-  let employee = await empModel.findById(request.body.id); // so that it returns updated value in DB
   try {
+    await empModel.findByIdAndUpdate(request.body.id, request.body);
+    let employee = await empModel.findById(request.body.id); // so that it returns updated value in DB
     response.send(employee);
   } catch (error) {
     response.status(500).send(error);
@@ -100,6 +101,11 @@ app.get("/managerUpdateEmployee", async (request, response) => {
 // create employee page
 app.get("/managerCreateEmployee", async (request, response) => {
   response.render("employeeCreate.ejs", {});
+});
+
+// delete employee page
+app.get("/managerDeleteEmployee", async (request, response) => {
+  response.render("employeeDelete.ejs", {});
 });
 
 // app.get("/all_employees", async (request, response) => {
